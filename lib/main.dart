@@ -101,32 +101,24 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: Container(
           color: Colors.black38,
-          child: Column(
+          height: double.infinity,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                width: 200.0,
-                height: 200.0,
-                padding: EdgeInsets.all(50.0),
-                margin: EdgeInsets.all(50.0),
+                width: 100.0,
+                height: 100.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Colors.red,
-                ),
-                child: const Text(
-                  'You have pushed the button this many times:',
                 ),
               ),
               Container(
-                width: 200.0,
-                height: 200.0,
-                padding: EdgeInsets.all(50.0),
-                margin: EdgeInsets.all(50.0),
+                width: 100.0,
+                height: 100.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Colors.red,
-                ),
-                child: const Text(
-                  'You have pushed the button this many times:',
                 ),
               ),
             ],
