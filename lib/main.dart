@@ -4,6 +4,13 @@ void main() {
   runApp(const MyApp());
 }
 
+// example types
+String name = "Fitness CRM";
+int number = 1;
+double weight = 1.0;
+List myList = ["first", "second"];
+Map<String, dynamic> myMap = {"someKey": "sameValue", "someKey2": 1};
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
