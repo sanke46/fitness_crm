@@ -97,21 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
         leading: Icon(Icons.notification_add, color: Colors.amber),
       ),
-      body: Container(
-        child: Stack(
-          children: [
-            Center(child: Text("Flutter ")),
-            ListTile(
-              leading: Icon(Icons.join_full),
-              tileColor: Colors.red,
-              title: Text('Text'),
-              trailing: Text("trailing"),
-              onTap: () {
-                print("Click triling");
-              },
-            ),
-          ],
-        ),
+      body: Wrap(
+        children: [
+          Text("Text widget 1"),
+          Text("Text widget 2"),
+          Text("Text widget 3"),
+          Text("Text widget 4"),
+          Text("Text widget 5"),
+          Text("Text widget 6"),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
