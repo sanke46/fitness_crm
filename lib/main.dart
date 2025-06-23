@@ -106,7 +106,9 @@ class _MyHomePageState extends State<MyHomePage> {
               tileColor: Colors.red,
               title: Text('Text'),
               trailing: Text("trailing"),
-              onTap: () {},
+              onTap: () {
+                print("Click triling");
+              },
             ),
           ],
         ),
