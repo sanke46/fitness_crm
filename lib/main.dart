@@ -26,8 +26,14 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Mapp'),
           centerTitle: false,
           leading: Icon(Icons.login),
-          actions: [Text("text action"), Icon(Icons.login)],
-          backgroundColor: Colors.teal,
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+            NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+          ],
+          onDestinationSelected: (value) {},
+          selectedIndex: 1,
         ),
       ),
     );
