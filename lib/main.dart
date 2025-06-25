@@ -27,6 +27,14 @@ class MyApp extends StatelessWidget {
           centerTitle: false,
           leading: Icon(Icons.login),
         ),
+        floatingActionButton: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+            SizedBox(height: 10.0),
+            FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
+          ],
+        ),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: "Home"),
