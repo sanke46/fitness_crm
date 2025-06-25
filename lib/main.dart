@@ -4,9 +4,7 @@ void main() {
   runApp(const MyApp());
 }
 
-//stateless
-//materila app
-//scaffold
+String title = "Flutter Mapp";
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text('Flutter Mapp'), centerTitle: true),
+        appBar: AppBar(title: Text(title!), centerTitle: true),
         bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination(icon: Icon(Icons.home), label: "Home"),
