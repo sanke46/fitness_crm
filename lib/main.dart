@@ -4,11 +4,15 @@ void main() {
   runApp(const MyApp());
 }
 
-String title = "Flutter Mapp";
-
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,38 +23,20 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int currentIndex = 0;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title!), centerTitle: true),
-      body: currentIndex == 0
-          ? Center(child: Text("1"))
-          : Center(child: Text("1")),
-      bottomNavigationBar: NavigationBar(
-        destinations: [
-          NavigationDestination(icon: Icon(Icons.home), label: "Home"),
-          NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
-        ],
-        onDestinationSelected: (value) {
-          setState(() {
-            currentIndex = value;
-          });
-        },
-        selectedIndex: currentIndex,
+      home: Scaffold(
+        appBar: AppBar(title: Text("Flutter Mapp")),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+            NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+          ],
+          selectedIndex: selectedIndex,
+          onDestinationSelected: (value) {
+            setState(() {
+              selectedIndex = value;
+            });
+          },
+        ),
       ),
     );
   }
