@@ -1,3 +1,4 @@
+import 'package:fitness_crm/views/widget_tree.dart';
 import 'package:fitness_crm/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -23,10 +24,7 @@ class _MyAppState extends State<MyApp> {
           brightness: Brightness.dark,
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: Text("Flutter Mapp")),
-        bottomNavigationBar: NavbarWidget(),
-      ),
+      home: WidgetTree(),
     );
   }
 }
