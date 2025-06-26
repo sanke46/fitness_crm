@@ -1,5 +1,5 @@
+import 'package:fitness_crm/data/notifiers.dart';
 import 'package:fitness_crm/views/widget_tree.dart';
-import 'package:fitness_crm/views/widgets/navbar_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,15 +16,20 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.teal,
-          brightness: Brightness.dark,
-        ),
-      ),
-      home: WidgetTree(),
+    return ValueListenableBuilder(
+      valueListenable: isDarkNotifier,
+      builder: (context, isDarkMode, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(
+              seedColor: Colors.teal,
+              brightness: isDarkMode ? Brightness.dark : Brightness.light,
+            ),
+          ),
+          home: WidgetTree(),
+        );
+      },
     );
   }
 }
