@@ -15,63 +15,66 @@ class _ProfilePageState extends State<ProfilePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          TextField(
-            controller: mController,
-            decoration: InputDecoration(border: OutlineInputBorder()),
-            onEditingComplete: () => setState(() {}),
-          ),
-          Text(mController.text),
-          Checkbox.adaptive(
-            tristate: true,
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          CheckboxListTile.adaptive(
-            tristate: true,
-            title: Text("Click me"),
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          Switch.adaptive(
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
-          SwitchListTile.adaptive(
-            title: Text("Switch element"),
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
-          Slider.adaptive(
-            max: 10.0,
-            value: sliderValue,
-            divisions: 10,
-            onChanged: (double value) {
-              setState(() {
-                sliderValue = value;
-              });
-            },
-          ),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: mController,
+              decoration: InputDecoration(border: OutlineInputBorder()),
+              onEditingComplete: () => setState(() {}),
+            ),
+            Text(mController.text),
+            Checkbox.adaptive(
+              tristate: true,
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            CheckboxListTile.adaptive(
+              tristate: true,
+              title: Text("Click me"),
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            Switch.adaptive(
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            SwitchListTile.adaptive(
+              title: Text("Switch element"),
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Slider.adaptive(
+              max: 10.0,
+              value: sliderValue,
+              divisions: 10,
+              onChanged: (double value) {
+                setState(() {
+                  sliderValue = value;
+                });
+              },
+            ),
+            Image.asset("assets/images/bg.png"),
+          ],
+        ),
       ),
     );
   }
