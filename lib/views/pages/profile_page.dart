@@ -24,7 +24,7 @@ class _ProfilePageState extends State<ProfilePage> {
             onEditingComplete: () => setState(() {}),
           ),
           Text(mController.text),
-          Checkbox(
+          Checkbox.adaptive(
             tristate: true,
             value: isChecked,
             onChanged: (bool? value) {
@@ -33,7 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          CheckboxListTile(
+          CheckboxListTile.adaptive(
             tristate: true,
             title: Text("Click me"),
             value: isChecked,
@@ -43,7 +43,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          Switch(
+          Switch.adaptive(
             value: isSwitched,
             onChanged: (bool value) {
               setState(() {
@@ -51,7 +51,7 @@ class _ProfilePageState extends State<ProfilePage> {
               });
             },
           ),
-          SwitchListTile(
+          SwitchListTile.adaptive(
             title: Text("Switch element"),
             value: isSwitched,
             onChanged: (bool value) {
