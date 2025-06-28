@@ -11,6 +11,7 @@ class _ProfilePageState extends State<ProfilePage> {
   TextEditingController mController = TextEditingController();
   bool? isChecked = false;
   bool isSwitched = false;
+  double sliderValue = 0.0;
 
   @override
   Widget build(BuildContext context) {
@@ -57,6 +58,16 @@ class _ProfilePageState extends State<ProfilePage> {
             onChanged: (bool value) {
               setState(() {
                 isSwitched = value;
+              });
+            },
+          ),
+          Slider.adaptive(
+            max: 10.0,
+            value: sliderValue,
+            divisions: 10,
+            onChanged: (double value) {
+              setState(() {
+                sliderValue = value;
               });
             },
           ),
