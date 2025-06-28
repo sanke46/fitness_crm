@@ -10,6 +10,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   TextEditingController mController = TextEditingController();
   bool? isChecked = false;
+  bool isSwitched = false;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -19,9 +21,7 @@ class _ProfilePageState extends State<ProfilePage> {
           TextField(
             controller: mController,
             decoration: InputDecoration(border: OutlineInputBorder()),
-            onEditingComplete: () {
-              setState(() {});
-            },
+            onEditingComplete: () => setState(() {}),
           ),
           Text(mController.text),
           Checkbox(
@@ -40,6 +40,23 @@ class _ProfilePageState extends State<ProfilePage> {
             onChanged: (bool? value) {
               setState(() {
                 isChecked = value;
+              });
+            },
+          ),
+          Switch(
+            value: isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
+              });
+            },
+          ),
+          SwitchListTile(
+            title: Text("Switch element"),
+            value: isSwitched,
+            onChanged: (bool value) {
+              setState(() {
+                isSwitched = value;
               });
             },
           ),
