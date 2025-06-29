@@ -1,6 +1,7 @@
 import 'package:fitness_crm/data/notifiers.dart';
 import 'package:fitness_crm/views/pages/home_page.dart';
 import 'package:fitness_crm/views/pages/profile_page.dart';
+import 'package:fitness_crm/views/pages/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'widgets/navbar_widget.dart';
 
@@ -25,6 +26,19 @@ class WidgetTree extends StatelessWidget {
                 return Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode);
               },
             ),
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingPage();
+                  },
+                ),
+              );
+            },
+            icon: Icon(Icons.settings),
           ),
         ],
       ),
