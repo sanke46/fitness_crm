@@ -72,9 +72,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
             ),
-            GestureDetector(
+            InkWell(
+              splashColor: Colors.teal,
               onTap: () {},
-              child: Image.asset("assets/images/bg.png"),
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white12,
+              ),
             ),
           ],
         ),
