@@ -1,5 +1,5 @@
 import 'package:fitness_crm/data/notifiers.dart';
-import 'package:fitness_crm/views/widget_tree.dart';
+import 'package:fitness_crm/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
               brightness: isDarkMode ? Brightness.dark : Brightness.light,
             ),
           ),
-          home: WidgetTree(),
+          home: WelcomePage(),
         );
       },
     );
