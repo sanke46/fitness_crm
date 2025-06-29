@@ -1,4 +1,5 @@
 import 'package:fitness_crm/views/widget_tree.dart';
+import 'package:fitness_crm/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -12,10 +13,7 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(20.0),
-              child: Image.asset("assets/images/bg.png"),
-            ),
+            HeroWidget(),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
