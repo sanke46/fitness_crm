@@ -14,14 +14,17 @@ class WelcomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Lottie.asset('assets/lotties/welcome.json'),
-            Text(
-              'Flutter Mapp',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 50.0,
-                letterSpacing: 20.0,
+            FittedBox(
+              child: Text(
+                'Flutter Mapp',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 150.0,
+                  letterSpacing: 50.0,
+                ),
               ),
             ),
+            SizedBox(height: 20.0),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
@@ -33,7 +36,27 @@ class WelcomePage extends StatelessWidget {
                   ),
                 );
               },
+              child: Text('Get started'),
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 55.0),
+              ),
+            ),
+            SizedBox(height: 10.0),
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WidgetTree();
+                    },
+                  ),
+                );
+              },
               child: Text('Login'),
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 55.0),
+              ),
             ),
           ],
         ),
