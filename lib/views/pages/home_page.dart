@@ -1,3 +1,4 @@
+import 'package:fitness_crm/data/constants.dart';
 import 'package:fitness_crm/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -20,8 +21,11 @@ class HomePage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Base Layout'),
-                    Text('the description of this'),
+                    Text('Base Layout', style: kTextStyle.titleTealText),
+                    Text(
+                      'the description of this',
+                      style: kTextStyle.descriptionText,
+                    ),
                   ],
                 ),
               ),
