@@ -1,6 +1,6 @@
 import 'package:fitness_crm/views/widget_tree.dart';
-import 'package:fitness_crm/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -13,7 +13,15 @@ class WelcomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            HeroWidget(),
+            Lottie.asset('assets/lotties/welcome.json'),
+            Text(
+              'Flutter Mapp',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 50.0,
+                letterSpacing: 20.0,
+              ),
+            ),
             FilledButton(
               onPressed: () {
                 Navigator.pushReplacement(
