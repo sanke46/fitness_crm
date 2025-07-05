@@ -9,29 +9,31 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          HeroWidget(title: 'Flutter Mapp'),
-          Container(
-            width: double.infinity,
-            padding: EdgeInsets.all(10.0),
-            child: Card(
-              child: Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('Base Layout', style: kTextStyle.titleTealText),
-                    Text(
-                      'the description of this',
-                      style: kTextStyle.descriptionText,
-                    ),
-                  ],
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            HeroWidget(title: 'Flutter Mapp'),
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.all(10.0),
+              child: Card(
+                child: Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Base Layout', style: kTextStyle.titleTealText),
+                      Text(
+                        'the description of this',
+                        style: kTextStyle.descriptionText,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
