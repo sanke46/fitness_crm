@@ -1,6 +1,8 @@
+import 'package:fitness_crm/data/constants.dart';
 import 'package:fitness_crm/data/notifiers.dart';
 import 'package:fitness_crm/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +16,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  @override
+  void initState() {
+    initThemeMode();
+    super.initState();
+  }
+
+  void initThemeMode() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final bool? mode = prefs.getBool(KConstats.themeModeKey);
+    isDarkNotifier.value = mode ?? false;
+  }
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder(

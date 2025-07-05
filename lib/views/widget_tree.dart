@@ -1,8 +1,10 @@
+import 'package:fitness_crm/data/constants.dart';
 import 'package:fitness_crm/data/notifiers.dart';
 import 'package:fitness_crm/views/pages/home_page.dart';
 import 'package:fitness_crm/views/pages/profile_page.dart';
 import 'package:fitness_crm/views/pages/setting_page.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'widgets/navbar_widget.dart';
 
 List<Widget> pages = [HomePage(), ProfilePage()];
@@ -17,8 +19,11 @@ class WidgetTree extends StatelessWidget {
         title: Text("Flutter Mapp"),
         actions: [
           IconButton(
-            onPressed: () {
+            onPressed: () async {
               isDarkNotifier.value = !isDarkNotifier.value;
+              final SharedPreferences prefs =
+                  await SharedPreferences.getInstance();
+              await prefs.setBool(KConstats.themeModeKey, isDarkNotifier.value);
             },
             icon: ValueListenableBuilder(
               valueListenable: isDarkNotifier,
