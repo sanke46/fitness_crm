@@ -1,6 +1,7 @@
 import 'package:fitness_crm/views/widget_tree.dart';
 import 'package:fitness_crm/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -34,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HeroWidget(title: widget.title),
+                Lottie.asset('assets/lotties/welcome.json', height: 400.0),
                 SizedBox(height: 20.0),
                 TextField(
                   controller: controllerEmail,
@@ -58,7 +59,10 @@ class _LoginPageState extends State<LoginPage> {
                   onEditingComplete: () => setState(() {}),
                 ),
                 SizedBox(height: 20.0),
-                ElevatedButton(
+                FilledButton(
+                  style: FilledButton.styleFrom(
+                    minimumSize: Size(double.infinity, 55.0),
+                  ),
                   onPressed: () {
                     onLoginPressed();
                   },
