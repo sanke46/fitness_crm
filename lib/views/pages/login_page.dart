@@ -26,6 +26,8 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    double widthScreen = MediaQuery.of(context).size.width;
+
     return Scaffold(
       appBar: AppBar(),
       body: Center(
@@ -35,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             child: LayoutBuilder(
               builder: (context, BoxConstraints contstrains) {
                 return FractionallySizedBox(
-                  widthFactor: contstrains.maxWidth > 640 ? 0.5 : 1.0,
+                  widthFactor: widthScreen > 640 ? 0.5 : 1.0,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
