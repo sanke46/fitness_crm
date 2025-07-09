@@ -1,3 +1,5 @@
+import 'package:fitness_crm/views/pages/exoanded_flexible_page.dart';
+import 'package:fitness_crm/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SettingPage extends StatefulWidget {
@@ -141,7 +143,19 @@ class _SettingPageState extends State<SettingPage> {
                   color: Colors.white12,
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Click me")),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ExpendedFlexiblePage();
+                      },
+                    ),
+                  );
+                },
+                child: Text("Show flexible and Expanded"),
+              ),
               FilledButton(onPressed: () {}, child: Text("Click me")),
               TextButton(onPressed: () {}, child: Text("Click me")),
               OutlinedButton(onPressed: () {}, child: Text("Click me")),
