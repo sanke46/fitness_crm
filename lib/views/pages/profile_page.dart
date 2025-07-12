@@ -1,5 +1,5 @@
-import 'package:fitness_crm/data/notifiers.dart';
-import 'package:fitness_crm/views/pages/welcome_page.dart';
+import 'package:chameleonFlutter/data/notifiers.dart';
+import 'package:chameleonFlutter/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {

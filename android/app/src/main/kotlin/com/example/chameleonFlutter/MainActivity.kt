@@ -1,4 +1,4 @@
-package com.example.fitness_crm
+package com.example.chameleonFlutter
 
 import io.flutter.embedding.android.FlutterActivity
 

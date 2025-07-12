@@ -1,4 +1,4 @@
-import 'package:fitness_crm/data/constants.dart';
+import 'package:chameleonFlutter/data/constants.dart';
 import 'package:flutter/material.dart';
 
 class ContainerWidget extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:fitness_crm/data/classes/activity_class.dart';
-import 'package:fitness_crm/views/widgets/hero_widget.dart';
+import 'package:chameleonFlutter/data/classes/activity_class.dart';
+import 'package:chameleonFlutter/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;

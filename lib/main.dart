@@ -1,9 +1,10 @@
-import 'package:fitness_crm/data/constants.dart';
-import 'package:fitness_crm/data/notifiers.dart';
-import 'package:fitness_crm/views/pages/welcome_page.dart';
+import 'package:chameleonFlutter/data/constants.dart';
+import 'package:chameleonFlutter/data/notifiers.dart';
+import 'package:chameleonFlutter/views/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// Added a comment to force re-analysis
 void main() {
   runApp(const MyApp());
 }
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return ValueListenableBuilder(
       valueListenable: isDarkNotifier,
-      builder: (context, isDarkMode, child) {
+      builder: (context, bool isDarkMode, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(

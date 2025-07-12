@@ -1,7 +1,7 @@
-import 'package:fitness_crm/data/constants.dart';
-import 'package:fitness_crm/views/pages/course_page.dart';
-import 'package:fitness_crm/views/widgets/container_widget.dart';
-import 'package:fitness_crm/views/widgets/hero_widget.dart';
+import 'package:chameleonFlutter/data/constants.dart';
+import 'package:chameleonFlutter/views/pages/course_page.dart';
+import 'package:chameleonFlutter/views/widgets/container_widget.dart';
+import 'package:chameleonFlutter/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

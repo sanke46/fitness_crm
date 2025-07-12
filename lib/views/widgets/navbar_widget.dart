@@ -1,4 +1,4 @@
-import 'package:fitness_crm/data/notifiers.dart';
+import 'package:chameleonFlutter/data/notifiers.dart';
 import 'package:flutter/material.dart';
 
 class NavbarWidget extends StatelessWidget {

@@ -1,5 +1,5 @@
-import 'package:fitness_crm/views/pages/exoanded_flexible_page.dart';
-import 'package:fitness_crm/views/pages/login_page.dart';
+import 'package:chameleonFlutter/views/pages/exoanded_flexible_page.dart';
+import 'package:chameleonFlutter/views/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class SettingPage extends StatefulWidget {

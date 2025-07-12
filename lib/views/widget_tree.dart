@@ -1,8 +1,8 @@
-import 'package:fitness_crm/data/constants.dart';
-import 'package:fitness_crm/data/notifiers.dart';
-import 'package:fitness_crm/views/pages/home_page.dart';
-import 'package:fitness_crm/views/pages/profile_page.dart';
-import 'package:fitness_crm/views/pages/setting_page.dart';
+import 'package:chameleonFlutter/data/constants.dart';
+import 'package:chameleonFlutter/data/notifiers.dart';
+import 'package:chameleonFlutter/views/pages/home_page.dart';
+import 'package:chameleonFlutter/views/pages/profile_page.dart';
+import 'package:chameleonFlutter/views/pages/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'widgets/navbar_widget.dart';
