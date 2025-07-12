@@ -1,6 +1,7 @@
+import 'package:fitness_crm/data/classes/activity_class.dart';
 import 'package:fitness_crm/views/widgets/hero_widget.dart';
 import 'package:flutter/material.dart';
-import 'dart:convert' as convert;
+import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class CoursePage extends StatefulWidget {
@@ -13,11 +14,10 @@ class CoursePage extends StatefulWidget {
 class _CoursePageState extends State<CoursePage> {
   @override
   void initState() {
-    getData();
     super.initState();
   }
 
-  Future<void> getData() async {
+  Future getData() async {
     var url = Uri.parse('https://bored-api.appbrewery.com/random');
     var response = await http.get(
       url,
@@ -27,12 +27,11 @@ class _CoursePageState extends State<CoursePage> {
       },
     );
     if (response.statusCode == 200) {
-      var jsonResponse =
-          convert.jsonDecode(response.body) as Map<String, dynamic>;
-      var itemCount = jsonResponse['activity'];
-      print('Request result : $itemCount.');
+      return Activity.fromJson(
+        jsonDecode(response.body) as Map<String, dynamic>,
+      );
     } else {
-      print('Request failed with status: ${response.statusCode}.');
+      throw Exception('Failed to load activity');
     }
   }
 
@@ -40,11 +39,24 @@ class _CoursePageState extends State<CoursePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: SingleChildScrollView(
-          child: Column(children: [HeroWidget(title: 'Course')]),
-        ),
+      body: FutureBuilder(
+        future: getData(),
+        builder: (context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          }
+          if (snapshot.hasData) {
+            Activity activity = snapshot.data;
+            return Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.0),
+              child: SingleChildScrollView(
+                child: Column(children: [HeroWidget(title: activity.activity)]),
+              ),
+            );
+          } else {
+            return Center(child: Text('Error'));
+          }
+        },
       ),
     );
   }
